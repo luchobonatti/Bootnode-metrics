@@ -78,11 +78,7 @@ const App = (props: ExtendedAppProps) => {
         />
         <meta content="initial-scale=1, width=device-width" name="viewport" />
       </Head>
-      <SWRConfig
-        value={{
-          suspense: true,
-        }}
-      >
+      <SWRConfig>
         <SafeSuspense>
           <SettingsProvider>
             <SettingsConsumer>

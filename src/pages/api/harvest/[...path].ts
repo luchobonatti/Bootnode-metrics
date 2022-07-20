@@ -10,6 +10,7 @@ export const config = {
   },
 }
 
+// TODO Hardcoded headers
 proxy.on('proxyReq', function (proxyReq) {
   proxyReq.setHeader('Harvest-Account-Id', '1441396')
   proxyReq.setHeader(
@@ -18,7 +19,9 @@ proxy.on('proxyReq', function (proxyReq) {
   )
 })
 
-export default (req: IncomingMessage, res: ServerResponse) => {
+// TODO this proxy don't work properly when is deployed
+
+const harvestAPIProxy = (req: IncomingMessage, res: ServerResponse) => {
   return new Promise((resolve, reject) => {
     // removes the api prefix from url
     req.url = req?.url?.replace(/^\/api\/harvest/, '')
@@ -30,6 +33,10 @@ export default (req: IncomingMessage, res: ServerResponse) => {
      */
     proxy.once('error', reject)
 
-    proxy.web(req, res, { target: API_URL, autoRewrite: false, changeOrigin: true })
+    proxy.web(req, res, { target: API_URL, autoRewrite: false, changeOrigin: true }, (e) =>
+      console.log(e),
+    )
   })
 }
+
+export default harvestAPIProxy
