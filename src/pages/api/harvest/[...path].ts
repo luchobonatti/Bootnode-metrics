@@ -18,7 +18,7 @@ proxy.on('proxyReq', function (proxyReq) {
   )
 })
 
-export default (req: IncomingMessage, res: ServerResponse) => {
+const harvestAPIProxy = (req: IncomingMessage, res: ServerResponse) => {
   return new Promise((resolve, reject) => {
     // removes the api prefix from url
     req.url = req?.url?.replace(/^\/api\/harvest/, '')
@@ -33,3 +33,5 @@ export default (req: IncomingMessage, res: ServerResponse) => {
     proxy.web(req, res, { target: API_URL, autoRewrite: false, changeOrigin: true })
   })
 }
+
+export default harvestAPIProxy
