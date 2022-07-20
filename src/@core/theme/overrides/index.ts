@@ -2,33 +2,33 @@
 import { Theme } from '@mui/material/styles'
 
 // ** Overrides Imports
+import MuiAccordion from './accordion'
+import MuiAlerts from './alerts'
+import MuiAvatar from './avatars'
+import MuiBackdrop from './backdrop'
+import MuiButton from './button'
 import MuiCard from './card'
 import MuiChip from './chip'
+import MuiDateTimePicker from './dateTimePicker'
+import MuiDialog from './dialog'
+import MuiDivider from './divider'
+import MuiInput from './input'
 import MuiLink from './link'
 import MuiList from './list'
 import MuiMenu from './menu'
-import MuiTabs from './tabs'
-import MuiInput from './input'
 import MuiPaper from './paper'
+import MuiTabs from './tabs'
 import MuiTable from './table'
-import MuiAlerts from './alerts'
-import MuiButton from './button'
-import MuiDialog from './dialog'
 import MuiRating from './rating'
 import MuiSelect from './select'
-import MuiAvatar from './avatars'
-import MuiDivider from './divider'
 import MuiPopover from './popover'
+import MuiTimeline from './timeline'
+import MuiToggleButton from './toggleButton'
 import MuiTooltip from './tooltip'
-import MuiBackdrop from './backdrop'
 import MuiSnackbar from './snackbar'
 import MuiSwitches from './switches'
-import MuiTimeline from './timeline'
-import MuiAccordion from './accordion'
 import MuiPagination from './pagination'
 import MuiTypography from './typography'
-import MuiToggleButton from './toggleButton'
-import MuiDateTimePicker from './dateTimePicker'
 
 const Overrides = (theme: Theme) => {
   const chip = MuiChip(theme)
@@ -81,7 +81,7 @@ const Overrides = (theme: Theme) => {
     pagination,
     MuiTypography,
     dateTimePicker,
-    MuiToggleButton
+    MuiToggleButton,
   )
 }
 

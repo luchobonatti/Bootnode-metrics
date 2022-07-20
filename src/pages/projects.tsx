@@ -1,8 +1,10 @@
-import { useQuery } from '@apollo/client'
 import type { NextPage } from 'next'
+
+import { useQuery } from '@apollo/client'
+import useSWR from 'swr'
+
 import withHarvestClient from '@/src/components/hocs/withHarvestClient'
 import { GET_ALL_PROJECTS } from '@/src/graphql/quieries/harvest/projects'
-import useSWR from 'swr'
 
 const Projects: NextPage = () => {
   const { data, error } = useSWR('harvest-projects', async () => {

@@ -1,6 +1,8 @@
+import { ReactNode } from 'react'
+
 import { SvgIconTypeMap } from '@mui/material'
 import { OverridableComponent } from '@mui/material/OverridableComponent'
-import { ReactNode } from 'react'
+
 import { Settings } from 'src/@core/context/settingsContext'
 
 export type ContentWidth = 'full' | 'boxed'

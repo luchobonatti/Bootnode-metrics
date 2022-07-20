@@ -2,22 +2,22 @@
 import { SyntheticEvent, useState } from 'react'
 
 // ** MUI Imports
-import Box from '@mui/material/Box'
-import Card from '@mui/material/Card'
+import TabContext from '@mui/lab/TabContext'
 import TabList from '@mui/lab/TabList'
 import TabPanel from '@mui/lab/TabPanel'
-import TabContext from '@mui/lab/TabContext'
-import { styled } from '@mui/material/styles'
+import Box from '@mui/material/Box'
+import Card from '@mui/material/Card'
 import MuiTab, { TabProps } from '@mui/material/Tab'
+import { styled } from '@mui/material/styles'
 
 // ** Icons Imports
 import AccountOutline from 'mdi-material-ui/AccountOutline'
-import LockOpenOutline from 'mdi-material-ui/LockOpenOutline'
 import InformationOutline from 'mdi-material-ui/InformationOutline'
+import LockOpenOutline from 'mdi-material-ui/LockOpenOutline'
 
 // ** Demo Tabs Imports
-import TabInfo from 'src/views/account-settings/TabInfo'
 import TabAccount from 'src/views/account-settings/TabAccount'
+import TabInfo from 'src/views/account-settings/TabInfo'
 import TabSecurity from 'src/views/account-settings/TabSecurity'
 
 // ** Third Party Styles Imports
@@ -25,11 +25,11 @@ import 'react-datepicker/dist/react-datepicker.css'
 
 const Tab = styled(MuiTab)<TabProps>(({ theme }) => ({
   [theme.breakpoints.down('md')]: {
-    minWidth: 100
+    minWidth: 100,
   },
   [theme.breakpoints.down('sm')]: {
-    minWidth: 67
-  }
+    minWidth: 67,
+  },
 }))
 
 const TabName = styled('span')(({ theme }) => ({
@@ -37,8 +37,8 @@ const TabName = styled('span')(({ theme }) => ({
   fontSize: '0.875rem',
   marginLeft: theme.spacing(2.4),
   [theme.breakpoints.down('md')]: {
-    display: 'none'
-  }
+    display: 'none',
+  },
 }))
 
 const AccountSettings = () => {
@@ -53,46 +53,46 @@ const AccountSettings = () => {
     <Card>
       <TabContext value={value}>
         <TabList
+          aria-label="account-settings tabs"
           onChange={handleChange}
-          aria-label='account-settings tabs'
-          sx={{ borderBottom: theme => `1px solid ${theme.palette.divider}` }}
+          sx={{ borderBottom: (theme) => `1px solid ${theme.palette.divider}` }}
         >
           <Tab
-            value='account'
             label={
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
                 <AccountOutline />
                 <TabName>Account</TabName>
               </Box>
             }
+            value="account"
           />
           <Tab
-            value='security'
             label={
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
                 <LockOpenOutline />
                 <TabName>Security</TabName>
               </Box>
             }
+            value="security"
           />
           <Tab
-            value='info'
             label={
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
                 <InformationOutline />
                 <TabName>Info</TabName>
               </Box>
             }
+            value="info"
           />
         </TabList>
 
-        <TabPanel sx={{ p: 0 }} value='account'>
+        <TabPanel sx={{ p: 0 }} value="account">
           <TabAccount />
         </TabPanel>
-        <TabPanel sx={{ p: 0 }} value='security'>
+        <TabPanel sx={{ p: 0 }} value="security">
           <TabSecurity />
         </TabPanel>
-        <TabPanel sx={{ p: 0 }} value='info'>
+        <TabPanel sx={{ p: 0 }} value="info">
           <TabInfo />
         </TabPanel>
       </TabContext>

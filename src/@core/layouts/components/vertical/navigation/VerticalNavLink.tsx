@@ -1,31 +1,31 @@
 // ** React Imports
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { ElementType, ReactNode } from 'react'
 
 // ** Next Imports
-import Link from 'next/link'
-import { useRouter } from 'next/router'
 
 // ** MUI Imports
+import Box, { BoxProps } from '@mui/material/Box'
 import Chip from '@mui/material/Chip'
 import ListItem from '@mui/material/ListItem'
-import { styled } from '@mui/material/styles'
-import Typography from '@mui/material/Typography'
-import Box, { BoxProps } from '@mui/material/Box'
-import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemButton, { ListItemButtonProps } from '@mui/material/ListItemButton'
+import ListItemIcon from '@mui/material/ListItemIcon'
+import Typography from '@mui/material/Typography'
+import { styled } from '@mui/material/styles'
 
 // ** Configs Import
+import { Settings } from 'src/@core/context/settingsContext'
+import { NavLink } from 'src/@core/layouts/types'
+import { handleURLQueries } from 'src/@core/layouts/utils'
 import themeConfig from 'src/configs/themeConfig'
 
 // ** Types
-import { NavLink } from 'src/@core/layouts/types'
-import { Settings } from 'src/@core/context/settingsContext'
 
 // ** Custom Components Imports
 import UserIcon from 'src/layouts/components/UserIcon'
 
 // ** Utils
-import { handleURLQueries } from 'src/@core/layouts/utils'
 
 interface Props {
   item: NavLink
@@ -78,15 +78,15 @@ const VerticalNavLink = ({ item, navVisible, toggleNavVisibility }: Props) => {
 
   return (
     <ListItem
-      disablePadding
       className="nav-link"
+      disablePadding
       disabled={item.disabled || false}
       sx={{ mt: 1.5, px: '0 !important' }}
     >
-      <Link passHref href={item.path === undefined ? '/' : `${item.path}`}>
+      <Link href={item.path === undefined ? '/' : `${item.path}`} passHref>
         <MenuNavLink
-          component={'a'}
           className={isNavLinkActive() ? 'active' : ''}
+          component={'a'}
           {...(item.openInNewTab ? { target: '_blank' } : null)}
           onClick={(e) => {
             if (item.path === undefined) {
@@ -118,8 +118,8 @@ const VerticalNavLink = ({ item, navVisible, toggleNavVisibility }: Props) => {
             </Typography>
             {item.badgeContent ? (
               <Chip
-                label={item.badgeContent}
                 color={item.badgeColor || 'primary'}
+                label={item.badgeContent}
                 sx={{
                   height: 20,
                   fontWeight: 500,

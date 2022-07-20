@@ -1,6 +1,8 @@
-import harvestClient from '@/src/graphql/clients/harvest-client'
-import { ApolloProvider } from '@apollo/client'
 import React, { ReactNode } from 'react'
+
+import { ApolloProvider } from '@apollo/client'
+
+import harvestClient from '@/src/graphql/clients/harvest-client'
 
 const withHarvestClient =
   (Component: React.FC) =>

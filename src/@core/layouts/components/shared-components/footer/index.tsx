@@ -6,10 +6,10 @@ import Box from '@mui/material/Box'
 import { useTheme } from '@mui/material/styles'
 
 // ** Type Import
+import FooterContent from './FooterContent'
 import { Settings } from 'src/@core/context/settingsContext'
 
 // ** Footer Content Component
-import FooterContent from './FooterContent'
 
 interface Props {
   settings: Settings
@@ -19,7 +19,7 @@ interface Props {
 
 const Footer = (props: Props) => {
   // ** Props
-  const { settings, footerContent: userFooterContent } = props
+  const { footerContent: userFooterContent, settings } = props
 
   // ** Hook
   const theme = useTheme()
@@ -29,23 +29,23 @@ const Footer = (props: Props) => {
 
   return (
     <Box
-      component='footer'
-      className='layout-footer'
+      className="layout-footer"
+      component="footer"
       sx={{
         zIndex: 10,
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
       }}
     >
       <Box
-        className='footer-content-container'
+        className="footer-content-container"
         sx={{
           width: '100%',
           borderTopLeftRadius: 14,
           borderTopRightRadius: 14,
           padding: theme.spacing(4, 6),
-          ...(contentWidth === 'boxed' && { '@media (min-width:1440px)': { maxWidth: 1440 } })
+          ...(contentWidth === 'boxed' && { '@media (min-width:1440px)': { maxWidth: 1440 } }),
         }}
       >
         {userFooterContent ? userFooterContent(props) : <FooterContent />}

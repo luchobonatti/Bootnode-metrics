@@ -1,31 +1,21 @@
 // ** MUI Imports
-import Grid from '@mui/material/Grid'
-import Card from '@mui/material/Card'
-import Link from '@mui/material/Link'
 import Button from '@mui/material/Button'
+import Card from '@mui/material/Card'
+import CardContent from '@mui/material/CardContent'
+import Grid from '@mui/material/Grid'
+import Link from '@mui/material/Link'
 import Tooltip from '@mui/material/Tooltip'
 import Typography from '@mui/material/Typography'
-import CardContent from '@mui/material/CardContent'
 
 /**
  ** Icons Imports:
  * ! You need to import all the icons which come from the API or from your server and then add these icons in 'icons' variable.
  * ! If you need all the icons from the library, use "import * as Icon from 'mdi-material-ui'"
  * */
-import Abacus from 'mdi-material-ui/Abacus'
-import Account from 'mdi-material-ui/Account'
 import AbTesting from 'mdi-material-ui/AbTesting'
-import AccountBox from 'mdi-material-ui/AccountBox'
-import AccountCog from 'mdi-material-ui/AccountCog'
+import Abacus from 'mdi-material-ui/Abacus'
 import AbjadArabic from 'mdi-material-ui/AbjadArabic'
 import AbjadHebrew from 'mdi-material-ui/AbjadHebrew'
-import AbugidaThai from 'mdi-material-ui/AbugidaThai'
-import AccessPoint from 'mdi-material-ui/AccessPoint'
-import AccountCash from 'mdi-material-ui/AccountCash'
-import AccountEdit from 'mdi-material-ui/AccountEdit'
-import AccountAlert from 'mdi-material-ui/AccountAlert'
-import AccountCheck from 'mdi-material-ui/AccountCheck'
-import AccountChild from 'mdi-material-ui/AccountChild'
 import AccountClock from 'mdi-material-ui/AccountClock'
 import AccountGroup from 'mdi-material-ui/AccountGroup'
 import AccountCancel from 'mdi-material-ui/AccountCancel'
@@ -39,9 +29,9 @@ import AccessPointMinus from 'mdi-material-ui/AccessPointMinus'
 import AccountArrowLeft from 'mdi-material-ui/AccountArrowLeft'
 import AccountCowboyHat from 'mdi-material-ui/AccountCowboyHat'
 import AbugidaDevanagari from 'mdi-material-ui/AbugidaDevanagari'
+import AbugidaThai from 'mdi-material-ui/AbugidaThai'
+import AccessPoint from 'mdi-material-ui/AccessPoint'
 import AccessPointRemove from 'mdi-material-ui/AccessPointRemove'
-import AccountArrowRight from 'mdi-material-ui/AccountArrowRight'
-import AccountBoxOutline from 'mdi-material-ui/AccountBoxOutline'
 import AccountCogOutline from 'mdi-material-ui/AccountCogOutline'
 import AccessPointNetwork from 'mdi-material-ui/AccessPointNetwork'
 import AccountBoxMultiple from 'mdi-material-ui/AccountBoxMultiple'
@@ -55,11 +45,21 @@ import AccountClockOutline from 'mdi-material-ui/AccountClockOutline'
 import AccountCancelOutline from 'mdi-material-ui/AccountCancelOutline'
 import AccountCircleOutline from 'mdi-material-ui/AccountCircleOutline'
 import AccessPointNetworkOff from 'mdi-material-ui/AccessPointNetworkOff'
+import Account from 'mdi-material-ui/Account'
+import AccountAlert from 'mdi-material-ui/AccountAlert'
 import AccountConvertOutline from 'mdi-material-ui/AccountConvertOutline'
-import AccountDetailsOutline from 'mdi-material-ui/AccountDetailsOutline'
 import AccountArrowLeftOutline from 'mdi-material-ui/AccountArrowLeftOutline'
+import AccountArrowRight from 'mdi-material-ui/AccountArrowRight'
 import AccountArrowRightOutline from 'mdi-material-ui/AccountArrowRightOutline'
+import AccountBox from 'mdi-material-ui/AccountBox'
 import AccountBoxMultipleOutline from 'mdi-material-ui/AccountBoxMultipleOutline'
+import AccountBoxOutline from 'mdi-material-ui/AccountBoxOutline'
+import AccountCash from 'mdi-material-ui/AccountCash'
+import AccountCheck from 'mdi-material-ui/AccountCheck'
+import AccountChild from 'mdi-material-ui/AccountChild'
+import AccountCog from 'mdi-material-ui/AccountCog'
+import AccountDetailsOutline from 'mdi-material-ui/AccountDetailsOutline'
+import AccountEdit from 'mdi-material-ui/AccountEdit'
 
 const icons = {
   Abacus,
@@ -109,17 +109,17 @@ const icons = {
   AccountDetailsOutline,
   AccountArrowLeftOutline,
   AccountArrowRightOutline,
-  AccountBoxMultipleOutline
+  AccountBoxMultipleOutline,
 }
 
 const Icons = () => {
   const renderIconGrids = () => {
-    return Object.keys(icons).map(key => {
+    return Object.keys(icons).map((key) => {
       const IconTag = icons[key as keyof typeof icons]
 
       return (
         <Grid item key={key}>
-          <Tooltip arrow title={key} placement='top'>
+          <Tooltip arrow placement="top" title={key}>
             <Card>
               <CardContent sx={{ display: 'flex' }}>
                 <IconTag />
@@ -134,25 +134,25 @@ const Icons = () => {
   return (
     <Grid container spacing={6}>
       <Grid item xs={12}>
-        <Typography variant='h5'>
-          <Link href='https://materialdesignicons.com/' target='_blank'>
+        <Typography variant="h5">
+          <Link href="https://materialdesignicons.com/" target="_blank">
             Material Design Icons
           </Link>
         </Typography>
-        <Typography variant='body2'>Material Design Icons from the Community</Typography>
+        <Typography variant="body2">Material Design Icons from the Community</Typography>
       </Grid>
       <Grid item xs={12}>
         <Grid container spacing={6}>
           {renderIconGrids()}
         </Grid>
       </Grid>
-      <Grid item xs={12} sx={{ textAlign: 'center' }}>
+      <Grid item sx={{ textAlign: 'center' }} xs={12}>
         <Button
-          target='_blank'
-          rel='noreferrer'
           component={Link}
-          variant='contained'
-          href='https://materialdesignicons.com/'
+          href="https://materialdesignicons.com/"
+          rel="noreferrer"
+          target="_blank"
+          variant="contained"
         >
           View All Material Design Icons
         </Button>

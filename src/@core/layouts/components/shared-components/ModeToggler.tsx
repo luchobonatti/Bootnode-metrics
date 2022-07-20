@@ -16,7 +16,7 @@ interface Props {
 
 const ModeToggler = (props: Props) => {
   // ** Props
-  const { settings, saveSettings } = props
+  const { saveSettings, settings } = props
 
   const handleModeChange = (mode: PaletteMode) => {
     saveSettings({ ...settings, mode })
@@ -31,7 +31,7 @@ const ModeToggler = (props: Props) => {
   }
 
   return (
-    <IconButton color='inherit' aria-haspopup='true' onClick={handleModeToggle}>
+    <IconButton aria-haspopup="true" color="inherit" onClick={handleModeToggle}>
       {settings.mode === 'dark' ? <WeatherSunny /> : <WeatherNight />}
     </IconButton>
   )

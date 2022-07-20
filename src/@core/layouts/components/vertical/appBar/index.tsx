@@ -2,9 +2,9 @@
 import { ReactNode } from 'react'
 
 // ** MUI Imports
-import { styled, useTheme } from '@mui/material/styles'
 import MuiAppBar, { AppBarProps } from '@mui/material/AppBar'
 import MuiToolbar, { ToolbarProps } from '@mui/material/Toolbar'
+import { styled, useTheme } from '@mui/material/styles'
 
 // ** Type Import
 import { Settings } from 'src/@core/context/settingsContext'
@@ -27,8 +27,8 @@ const AppBar = styled(MuiAppBar)<AppBarProps>(({ theme }) => ({
   minHeight: theme.mixins.toolbar.minHeight,
   [theme.breakpoints.down('sm')]: {
     paddingLeft: theme.spacing(4),
-    paddingRight: theme.spacing(4)
-  }
+    paddingRight: theme.spacing(4),
+  },
 }))
 
 const Toolbar = styled(MuiToolbar)<ToolbarProps>(({ theme }) => ({
@@ -38,7 +38,7 @@ const Toolbar = styled(MuiToolbar)<ToolbarProps>(({ theme }) => ({
   padding: `${theme.spacing(0)} !important`,
   minHeight: `${theme.mixins.toolbar.minHeight}px !important`,
   transition:
-    'padding .25s ease-in-out, box-shadow .25s ease-in-out, backdrop-filter .25s ease-in-out, background-color .25s ease-in-out'
+    'padding .25s ease-in-out, box-shadow .25s ease-in-out, backdrop-filter .25s ease-in-out, background-color .25s ease-in-out',
 }))
 
 const LayoutAppBar = (props: Props) => {
@@ -52,13 +52,13 @@ const LayoutAppBar = (props: Props) => {
   const { contentWidth } = settings
 
   return (
-    <AppBar elevation={0} color='default' className='layout-navbar' position='static'>
+    <AppBar className="layout-navbar" color="default" elevation={0} position="static">
       <Toolbar
-        className='navbar-content-container'
+        className="navbar-content-container"
         sx={{
           ...(contentWidth === 'boxed' && {
-            '@media (min-width:1440px)': { maxWidth: `calc(1440px - ${theme.spacing(6)} * 2)` }
-          })
+            '@media (min-width:1440px)': { maxWidth: `calc(1440px - ${theme.spacing(6)} * 2)` },
+          }),
         }}
       >
         {(userVerticalAppBarContent && userVerticalAppBarContent(props)) || null}

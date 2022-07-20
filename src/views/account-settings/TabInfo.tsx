@@ -2,19 +2,19 @@
 import { forwardRef, useState } from 'react'
 
 // ** MUI Imports
-import Grid from '@mui/material/Grid'
-import Radio from '@mui/material/Radio'
-import Select from '@mui/material/Select'
 import Button from '@mui/material/Button'
-import MenuItem from '@mui/material/MenuItem'
-import TextField from '@mui/material/TextField'
-import FormLabel from '@mui/material/FormLabel'
-import InputLabel from '@mui/material/InputLabel'
-import RadioGroup from '@mui/material/RadioGroup'
 import CardContent from '@mui/material/CardContent'
 import FormControl from '@mui/material/FormControl'
-import OutlinedInput from '@mui/material/OutlinedInput'
 import FormControlLabel from '@mui/material/FormControlLabel'
+import FormLabel from '@mui/material/FormLabel'
+import Grid from '@mui/material/Grid'
+import InputLabel from '@mui/material/InputLabel'
+import MenuItem from '@mui/material/MenuItem'
+import OutlinedInput from '@mui/material/OutlinedInput'
+import Radio from '@mui/material/Radio'
+import RadioGroup from '@mui/material/RadioGroup'
+import Select from '@mui/material/Select'
+import TextField from '@mui/material/TextField'
 
 // ** Third Party Imports
 import DatePicker from 'react-datepicker'
@@ -23,7 +23,7 @@ import DatePicker from 'react-datepicker'
 import DatePickerWrapper from 'src/@core/styles/libs/react-datepicker'
 
 const CustomInput = forwardRef((props, ref) => {
-  return <TextField inputRef={ref} label='Birth Date' fullWidth {...props} />
+  return <TextField fullWidth inputRef={ref} label="Birth Date" {...props} />
 })
 
 const TabInfo = () => {
@@ -34,86 +34,91 @@ const TabInfo = () => {
     <CardContent>
       <form>
         <Grid container spacing={7}>
-          <Grid item xs={12} sx={{ marginTop: 4.8 }}>
+          <Grid item sx={{ marginTop: 4.8 }} xs={12}>
             <TextField
+              defaultValue="The name’s John Deo. I am a tireless seeker of knowledge, occasional purveyor of wisdom and also, coincidentally, a graphic designer. Algolia helps businesses across industries quickly create relevant 😎, scalable 😀, and lightning 😍 fast search and discovery experiences."
               fullWidth
-              multiline
-              label='Bio'
+              label="Bio"
               minRows={2}
-              placeholder='Bio'
-              defaultValue='The name’s John Deo. I am a tireless seeker of knowledge, occasional purveyor of wisdom and also, coincidentally, a graphic designer. Algolia helps businesses across industries quickly create relevant 😎, scalable 😀, and lightning 😍 fast search and discovery experiences.'
+              multiline
+              placeholder="Bio"
             />
           </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid item sm={6} xs={12}>
             <DatePickerWrapper>
               <DatePicker
-                selected={date}
-                showYearDropdown
-                showMonthDropdown
-                id='account-settings-date'
-                placeholderText='MM-DD-YYYY'
                 customInput={<CustomInput />}
+                id="account-settings-date"
                 onChange={(date: Date) => setDate(date)}
+                placeholderText="MM-DD-YYYY"
+                selected={date}
+                showMonthDropdown
+                showYearDropdown
               />
             </DatePickerWrapper>
           </Grid>
-          <Grid item xs={12} sm={6}>
-            <TextField fullWidth type='number' label='Phone' placeholder='(123) 456-7890' />
+          <Grid item sm={6} xs={12}>
+            <TextField fullWidth label="Phone" placeholder="(123) 456-7890" type="number" />
           </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid item sm={6} xs={12}>
             <TextField
+              defaultValue="https://themeselection.com/"
               fullWidth
-              label='Website'
-              placeholder='https://example.com/'
-              defaultValue='https://themeselection.com/'
+              label="Website"
+              placeholder="https://example.com/"
             />
           </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid item sm={6} xs={12}>
             <FormControl fullWidth>
               <InputLabel>Country</InputLabel>
-              <Select label='Country' defaultValue='USA'>
-                <MenuItem value='USA'>USA</MenuItem>
-                <MenuItem value='UK'>UK</MenuItem>
-                <MenuItem value='Australia'>Australia</MenuItem>
-                <MenuItem value='Germany'>Germany</MenuItem>
+              <Select defaultValue="USA" label="Country">
+                <MenuItem value="USA">USA</MenuItem>
+                <MenuItem value="UK">UK</MenuItem>
+                <MenuItem value="Australia">Australia</MenuItem>
+                <MenuItem value="Germany">Germany</MenuItem>
               </Select>
             </FormControl>
           </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid item sm={6} xs={12}>
             <FormControl fullWidth>
-              <InputLabel id='form-layouts-separator-multiple-select-label'>Languages</InputLabel>
+              <InputLabel id="form-layouts-separator-multiple-select-label">Languages</InputLabel>
               <Select
-                multiple
                 defaultValue={['English']}
-                id='account-settings-multiple-select'
-                labelId='account-settings-multiple-select-label'
-                input={<OutlinedInput label='Languages' id='select-multiple-language' />}
+                id="account-settings-multiple-select"
+                input={<OutlinedInput id="select-multiple-language" label="Languages" />}
+                labelId="account-settings-multiple-select-label"
+                multiple
               >
-                <MenuItem value='English'>English</MenuItem>
-                <MenuItem value='French'>French</MenuItem>
-                <MenuItem value='Spanish'>Spanish</MenuItem>
-                <MenuItem value='Portuguese'>Portuguese</MenuItem>
-                <MenuItem value='Italian'>Italian</MenuItem>
-                <MenuItem value='German'>German</MenuItem>
-                <MenuItem value='Arabic'>Arabic</MenuItem>
+                <MenuItem value="English">English</MenuItem>
+                <MenuItem value="French">French</MenuItem>
+                <MenuItem value="Spanish">Spanish</MenuItem>
+                <MenuItem value="Portuguese">Portuguese</MenuItem>
+                <MenuItem value="Italian">Italian</MenuItem>
+                <MenuItem value="German">German</MenuItem>
+                <MenuItem value="Arabic">Arabic</MenuItem>
               </Select>
             </FormControl>
           </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid item sm={6} xs={12}>
             <FormControl>
               <FormLabel sx={{ fontSize: '0.875rem' }}>Gender</FormLabel>
-              <RadioGroup row defaultValue='male' aria-label='gender' name='account-settings-info-radio'>
-                <FormControlLabel value='male' label='Male' control={<Radio />} />
-                <FormControlLabel value='female' label='Female' control={<Radio />} />
-                <FormControlLabel value='other' label='Other' control={<Radio />} />
+              <RadioGroup
+                aria-label="gender"
+                defaultValue="male"
+                name="account-settings-info-radio"
+                row
+              >
+                <FormControlLabel control={<Radio />} label="Male" value="male" />
+                <FormControlLabel control={<Radio />} label="Female" value="female" />
+                <FormControlLabel control={<Radio />} label="Other" value="other" />
               </RadioGroup>
             </FormControl>
           </Grid>
           <Grid item xs={12}>
-            <Button variant='contained' sx={{ marginRight: 3.5 }}>
+            <Button sx={{ marginRight: 3.5 }} variant="contained">
               Save Changes
             </Button>
-            <Button type='reset' variant='outlined' color='secondary' onClick={() => setDate(null)}>
+            <Button color="secondary" onClick={() => setDate(null)} type="reset" variant="outlined">
               Reset
             </Button>
           </Grid>

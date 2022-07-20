@@ -2,10 +2,10 @@
 import Grid from '@mui/material/Grid'
 
 // ** Icons Imports
-import Poll from 'mdi-material-ui/Poll'
+import BriefcaseVariantOutline from 'mdi-material-ui/BriefcaseVariantOutline'
 import CurrencyUsd from 'mdi-material-ui/CurrencyUsd'
 import HelpCircleOutline from 'mdi-material-ui/HelpCircleOutline'
-import BriefcaseVariantOutline from 'mdi-material-ui/BriefcaseVariantOutline'
+import Poll from 'mdi-material-ui/Poll'
 
 // ** Custom Components Imports
 import CardStatisticsVerticalComponent from 'src/@core/components/card-statistics/card-stats-vertical'
@@ -14,80 +14,80 @@ import CardStatisticsVerticalComponent from 'src/@core/components/card-statistic
 import ApexChartWrapper from 'src/@core/styles/libs/react-apexcharts'
 
 // ** Demo Components Imports
-import Table from 'src/views/dashboard/Table'
-import Trophy from 'src/views/dashboard/Trophy'
-import TotalEarning from 'src/views/dashboard/TotalEarning'
-import StatisticsCard from 'src/views/dashboard/StatisticsCard'
-import WeeklyOverview from 'src/views/dashboard/WeeklyOverview'
 import DepositWithdraw from 'src/views/dashboard/DepositWithdraw'
 import SalesByCountries from 'src/views/dashboard/SalesByCountries'
+import StatisticsCard from 'src/views/dashboard/StatisticsCard'
+import Table from 'src/views/dashboard/Table'
+import TotalEarning from 'src/views/dashboard/TotalEarning'
+import Trophy from 'src/views/dashboard/Trophy'
+import WeeklyOverview from 'src/views/dashboard/WeeklyOverview'
 
 const Dashboard = () => {
   return (
     <ApexChartWrapper>
       <Grid container spacing={6}>
-        <Grid item xs={12} md={4}>
+        <Grid item md={4} xs={12}>
           <Trophy />
         </Grid>
-        <Grid item xs={12} md={8}>
+        <Grid item md={8} xs={12}>
           <StatisticsCard />
         </Grid>
-        <Grid item xs={12} md={6} lg={4}>
+        <Grid item lg={4} md={6} xs={12}>
           <WeeklyOverview />
         </Grid>
-        <Grid item xs={12} md={6} lg={4}>
+        <Grid item lg={4} md={6} xs={12}>
           <TotalEarning />
         </Grid>
-        <Grid item xs={12} md={6} lg={4}>
+        <Grid item lg={4} md={6} xs={12}>
           <Grid container spacing={6}>
             <Grid item xs={6}>
               <CardStatisticsVerticalComponent
-                stats='$25.6k'
+                color="success"
                 icon={<Poll />}
-                color='success'
-                trendNumber='+42%'
-                title='Total Profit'
-                subtitle='Weekly Profit'
+                stats="$25.6k"
+                subtitle="Weekly Profit"
+                title="Total Profit"
+                trendNumber="+42%"
               />
             </Grid>
             <Grid item xs={6}>
               <CardStatisticsVerticalComponent
-                stats='$78'
-                title='Refunds'
-                trend='negative'
-                color='secondary'
-                trendNumber='-15%'
-                subtitle='Past Month'
+                color="secondary"
                 icon={<CurrencyUsd />}
+                stats="$78"
+                subtitle="Past Month"
+                title="Refunds"
+                trend="negative"
+                trendNumber="-15%"
               />
             </Grid>
             <Grid item xs={6}>
               <CardStatisticsVerticalComponent
-                stats='862'
-                trend='negative'
-                trendNumber='-18%'
-                title='New Project'
-                subtitle='Yearly Project'
                 icon={<BriefcaseVariantOutline />}
+                stats="862"
+                subtitle="Yearly Project"
+                title="New Project"
+                trend="negative"
+                trendNumber="-18%"
               />
             </Grid>
             <Grid item xs={6}>
               <CardStatisticsVerticalComponent
-                stats='15'
-                color='warning'
-                trend='negative'
-                trendNumber='-18%'
-                subtitle='Last Week'
-                title='Sales Queries'
+                color="warning"
                 icon={<HelpCircleOutline />}
+                stats="15"
+                subtitle="Last Week"
+                title="Sales Queries"
+                trend="negative"
+                trendNumber="-18%"
               />
             </Grid>
           </Grid>
         </Grid>
-        <Grid item xs={12} md={6} lg={4}>
+        <Grid item lg={4} md={6} xs={12}>
           <SalesByCountries />
         </Grid>
-        <Grid item xs={12} md={12} lg={8}>
+        <Grid item lg={8} md={12} xs={12}>
           <DepositWithdraw />
         </Grid>
         <Grid item xs={12}>
