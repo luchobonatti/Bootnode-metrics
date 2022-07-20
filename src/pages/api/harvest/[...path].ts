@@ -1,4 +1,3 @@
-import Cookies from 'cookies'
 import { IncomingMessage, ServerResponse } from 'http'
 import httpProxy from 'http-proxy'
 
@@ -11,7 +10,7 @@ export const config = {
   },
 }
 
-proxy.on('proxyReq', function (proxyReq, req, res, options) {
+proxy.on('proxyReq', function (proxyReq) {
   proxyReq.setHeader('Harvest-Account-Id', '1441396')
   proxyReq.setHeader(
     'Authorization',

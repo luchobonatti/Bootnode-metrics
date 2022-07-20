@@ -1,6 +1,5 @@
 // ** MUI Imports
 import Grid from '@mui/material/Grid'
-
 // ** Icons Imports
 import BriefcaseVariantOutline from 'mdi-material-ui/BriefcaseVariantOutline'
 import CurrencyUsd from 'mdi-material-ui/CurrencyUsd'
@@ -9,10 +8,8 @@ import Poll from 'mdi-material-ui/Poll'
 
 // ** Custom Components Imports
 import CardStatisticsVerticalComponent from 'src/@core/components/card-statistics/card-stats-vertical'
-
 // ** Styled Component Import
 import ApexChartWrapper from 'src/@core/styles/libs/react-apexcharts'
-
 // ** Demo Components Imports
 import DepositWithdraw from 'src/views/dashboard/DepositWithdraw'
 import SalesByCountries from 'src/views/dashboard/SalesByCountries'

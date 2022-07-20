@@ -36,11 +36,8 @@ module.exports = {
   ],
   rules: {
     'import/extensions': 'off',
+    'import/extensions': 0,
     'import/no-cycle': [0, { ignoreExternal: true }],
-    'import/no-extraneous-dependencies': [
-      'warn',
-      { optionalDependencies: false, peerDependencies: false },
-    ],
     'import/no-unresolved': 0,
     'import/order': [
       'error',

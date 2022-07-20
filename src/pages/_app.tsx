@@ -3,16 +3,12 @@ import type { NextPage } from 'next'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { Router } from 'next/router'
-
 // ** Loader Import
 import { ComponentType, ReactElement, ReactNode } from 'react'
 
 import type { EmotionCache } from '@emotion/cache'
 import { CacheProvider } from '@emotion/react'
 import NProgress from 'nprogress'
-
-// ** Emotion Imports
-
 // ** Config Imports
 import { SWRConfig } from 'swr'
 
@@ -21,7 +17,6 @@ import { SettingsConsumer, SettingsProvider } from 'src/@core/context/settingsCo
 import ThemeComponent from 'src/@core/theme/ThemeComponent'
 import { createEmotionCache } from 'src/@core/utils/create-emotion-cache'
 import themeConfig from 'src/configs/themeConfig'
-
 // ** Component Imports
 import UserLayout from 'src/layouts/UserLayout'
 
@@ -35,7 +30,7 @@ import 'react-perfect-scrollbar/dist/css/styles.css'
 // ** Global css styles
 import '../../styles/globals.css'
 
-export type Page<P = {}> = NextPage<P> & {
+export type Page<P = Record<string, unknown>> = NextPage<P> & {
   // You can disable whichever you don't need
   getLayout?: (page: ReactElement) => ReactNode
   layout?: ComponentType

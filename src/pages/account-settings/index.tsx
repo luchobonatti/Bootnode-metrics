@@ -9,7 +9,6 @@ import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
 import MuiTab, { TabProps } from '@mui/material/Tab'
 import { styled } from '@mui/material/styles'
-
 // ** Icons Imports
 import AccountOutline from 'mdi-material-ui/AccountOutline'
 import InformationOutline from 'mdi-material-ui/InformationOutline'

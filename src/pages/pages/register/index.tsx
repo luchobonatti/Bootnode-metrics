@@ -20,7 +20,6 @@ import OutlinedInput from '@mui/material/OutlinedInput'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 import { styled, useTheme } from '@mui/material/styles'
-
 // ** Icons Imports
 import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
 import EyeOutline from 'mdi-material-ui/EyeOutline'
@@ -32,9 +31,7 @@ import Twitter from 'mdi-material-ui/Twitter'
 // ** Configs
 import BlankLayout from 'src/@core/layouts/BlankLayout'
 import themeConfig from 'src/configs/themeConfig'
-
 // ** Layout Import
-
 // ** Demo Imports
 import FooterIllustrationsV1 from 'src/views/pages/auth/FooterIllustration'
 
@@ -167,13 +164,7 @@ const RegisterPage = () => {
             <Typography variant="body2">Make your app management easy and fun!</Typography>
           </Box>
           <form autoComplete="off" noValidate onSubmit={(e) => e.preventDefault()}>
-            <TextField
-              autoFocus
-              fullWidth
-              id="username"
-              label="Username"
-              sx={{ marginBottom: 4 }}
-            />
+            <TextField fullWidth id="username" label="Username" sx={{ marginBottom: 4 }} />
             <TextField fullWidth label="Email" sx={{ marginBottom: 4 }} type="email" />
             <FormControl fullWidth>
               <InputLabel htmlFor="auth-register-password">Password</InputLabel>

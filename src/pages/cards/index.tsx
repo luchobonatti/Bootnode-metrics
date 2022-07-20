@@ -12,12 +12,12 @@ import CardLinkedIn from 'src/views/cards/CardLinkedIn'
 import CardMembership from 'src/views/cards/CardMembership'
 import CardMobile from 'src/views/cards/CardMobile'
 import CardNavigation from 'src/views/cards/CardNavigation'
+import CardNavigationCenter from 'src/views/cards/CardNavigationCenter'
 import CardSupport from 'src/views/cards/CardSupport'
-import CardUser from 'src/views/cards/CardUser'
 import CardTwitter from 'src/views/cards/CardTwitter'
+import CardUser from 'src/views/cards/CardUser'
 import CardVerticalRatings from 'src/views/cards/CardVerticalRatings'
 import CardWithCollapse from 'src/views/cards/CardWithCollapse'
-import CardNavigationCenter from 'src/views/cards/CardNavigationCenter'
 
 const CardBasic = () => {
   return (
